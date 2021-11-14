@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express'
 import config from 'config'
 import logger from "./utils/logger"
 import routes from './routes'
+import swagerDocs from './utils/swagger'
 
 const app = express()
 const port = config.get<number>('port')
@@ -19,4 +20,9 @@ app.listen(port, async () => {
    * Menjalankan rute-rute yang didefinisikan di ./routes.ts
    */
   routes(app)
+
+  /**
+   * Dokumentasi Swagger
+   */
+  swagerDocs(app, port)
 })
