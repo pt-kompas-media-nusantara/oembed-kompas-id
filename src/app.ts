@@ -12,7 +12,7 @@ const port = config.get<number>('port')
 app.use(cors(corsOptions))
 app.use(express.json())
 
-app.listen(port, async () => {
+app.listen(port, () => {
   /**
    * Mengeluarkan pesan di konsol terminal bahwa aplikasi
    * sedang berjalan beserta informasi host & port
