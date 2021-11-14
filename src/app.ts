@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express'
 import config from 'config'
+import logger from "./utils/logger"
 import routes from './routes'
 
 const app = express()
@@ -12,7 +13,7 @@ app.listen(port, async () => {
    * Mengeluarkan pesan di konsol terminal bahwa aplikasi
    * sedang berjalan beserta informasi host & port
    */
-  console.log(`Aplikasi jalan di http://localhost:${port}`)
+  logger.info(`Aplikasi jalan di http://localhost:${port}`)
 
   /**
    * Menjalankan rute-rute yang didefinisikan di ./routes.ts
