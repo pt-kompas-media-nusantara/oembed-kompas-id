@@ -10,7 +10,7 @@ lalu jalankan `npm install`
 ## Pengoperasian (Pengembangan)
 
 `npm run dev`
-
+Aplikasi jalan di http://localhost:3003
 
 ## Pengoperasian (Produksi)
 
