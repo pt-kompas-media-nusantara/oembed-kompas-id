@@ -1,3 +1,9 @@
+/**
+ * Logger untuk menampilkan info/pesan di terminal
+ * Dokumentasi:
+ * https://github.com/pinojs/pino
+ * https://github.com/pinojs/pino-pretty
+ */
 import pino from 'pino'
 
 const logger = pino({
