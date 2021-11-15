@@ -1,5 +1,7 @@
 import { Express, Request, Response } from 'express'
 
+import { fetch as twitterFetch } from './controllers/api/v1/twitter'
+
 function routes (app: Express) {
   /**
    * @swagger
@@ -20,6 +22,8 @@ function routes (app: Express) {
    *                   example: pong
    */
   app.get('/', (req: Request, res: Response) => res.json({'ping': 'pong'}))
+
+  app.get('/api/v1/twitter', twitterFetch)
 }
 
 export default routes
