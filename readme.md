@@ -2,6 +2,10 @@
 
 Layanan mikro untuk mengambil data oembed dari media sosial
 
+## versi node
+
+Pastikan versi nodeJs minimal versi 14 (menyesuikan versi sever)
+
 ## Instalasi
 
 Sementara ini cukup ambil repositori ini di ranting pengembangan (*development*) 
@@ -18,6 +22,17 @@ Aplikasi jalan di http://localhost:3003
 ```bash
 npm run build
 node dist/src/app.js
+```
+
+## Unit Tests
+Jalankan semua tes
+``` bash
+npm test
+```
+
+Jalankan tes untuk unit tertentu
+```bash
+npm test folder/berkas.spec.js
 ```
 
 ## Dokumentasi
