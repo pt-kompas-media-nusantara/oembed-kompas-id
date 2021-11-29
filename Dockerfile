@@ -9,7 +9,7 @@ COPY ./package.json ./package-lock.json* ./
 RUN npm install
 
 COPY . /usr/src/nuxt-app/
-
+EXPOSE 3003
 RUN npm run dev
 
-EXPOSE 3003
+
