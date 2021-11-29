@@ -10,6 +10,7 @@ RUN npm install
 
 COPY . /usr/src/nuxt-app/
 EXPOSE 3003
-RUN npm run dev
+RUN npm run build
+CMD [ "node", "/usr/src/nuxt-app/dist/src/app.js" ]
 
 
