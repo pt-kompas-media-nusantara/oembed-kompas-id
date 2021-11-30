@@ -3,7 +3,7 @@
   "compilerOptions": {
     /* Emit */
     "allowSyntheticDefaultImports": true, /* Allow 'import x from y' when a module doesn't have a default export. */
-    "outDir": "dist",                    /* Specify an output folder for all emitted files. */
+    "outDir": "dist",                     /* Specify an output folder for all emitted files. */
     "sourceMap": true,                    /* Create source map files for emitted JavaScript files. */
 
     /* Language and Environment */
