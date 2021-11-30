@@ -6,7 +6,7 @@ import logger from './utils/logger'
 import routes from './routes'
 import swagerDocs from './utils/swagger'
 
-const app = express()
+export const app = express()
 const port = config.get<number>('port')
 
 app.use(cors(corsOptions))
