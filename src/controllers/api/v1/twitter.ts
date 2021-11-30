@@ -3,8 +3,12 @@ import axios from 'axios'
 // import logger from '../../../utils/logger'
 
 export async function fetch (req: Request, res: Response) {
+  /**
+   * Dokumentasi mengenai oembed API Twitter bisa diakses di
+   * https://developer.twitter.com/en/docs/twitter-for-websites/oembed-api
+   */
   const {
-    omitScript = false,
+    omit_script = false,
     url = undefined
   } = req?.query
   if (!url) { return }
@@ -13,7 +17,7 @@ export async function fetch (req: Request, res: Response) {
       'https://publish.twitter.com/oembed',
       {
         params: {
-          omit_script: omitScript,
+          omit_script,
           url
         }
       }
