@@ -3,6 +3,9 @@ import { Express, Request, Response } from 'express'
 import { fetch as twitterFetch } from './controllers/api/v1/twitter'
 import { fetch as youtubeFetch } from './controllers/api/v1/youtube'
 
+import { getTwitterQuerySchema } from './schema/twitter.schema'
+import validateResource from './middleware/validateResource'
+
 function routes (app: Express) {
   /**
    * @swagger
@@ -39,7 +42,7 @@ function routes (app: Express) {
    *         allowEmptyValue: false
    *         example: https://twitter.com/ixavieruncle/status/1457667985817042951
    *       - in: query
-   *         name: omitScript
+   *         name: omit_script
    *         description: Menentukan apakah tag `<script>` disertakan dalam bodi respons dari Twitter. Nilai default `false`
    *         required: false
    *         allowEmptyValue: true
@@ -100,7 +103,7 @@ function routes (app: Express) {
    *                   type: string
    *                   example: Request failed with status code 404
    */
-  app.get('/api/v1/twitter', twitterFetch)
+  app.get('/api/v1/twitter', validateResource(getTwitterQuerySchema), twitterFetch)
 
   /**
    * @swagger
@@ -154,7 +157,7 @@ function routes (app: Express) {
    *                 thumbnail_height:
    *                   type: number,
    *                   example: 360
-   *                 thumbnail_width: 
+   *                 thumbnail_width:
    *                   type: number,
    *                   example: 480
    *                 thumbnail_url:
