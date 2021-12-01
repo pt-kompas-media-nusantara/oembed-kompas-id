@@ -1,3 +1,7 @@
+/**
+ * Skema untuk rute /api/v1/twitter
+ * Dokumentasi zod di https://github.com/colinhacks/zod
+ */
 import { boolean, object, preprocess, string } from 'zod'
 
 const query = {
