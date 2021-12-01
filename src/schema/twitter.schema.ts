@@ -5,7 +5,10 @@ const query = {
     url: string({
       invalid_type_error: 'Nilai url harus berupa teks',
       required_error: 'Nilai url diperlukan'
-    }).min(1, 'Nilai url tidak boleh kosong'),
+    }).min(1, 'Nilai url tidak boleh kosong')
+      .refine(val => val.includes('https://twitter.com/'), {
+        message: 'Nilai url tidak mengandung alamat Twitter'
+      }),
     omit_script: preprocess(
       (val:any) => {
         /**
