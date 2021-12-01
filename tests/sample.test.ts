@@ -1,5 +1,7 @@
-import request from 'supertest';
-import { app } from '../src/app';
+import request from 'supertest'
+import runServer from '../src/utils/server'
+
+const app = runServer()
 
 describe('Test Youtube', () => {
   it('Request Fpe1wNTXbJI Moto Gp', async () => {
