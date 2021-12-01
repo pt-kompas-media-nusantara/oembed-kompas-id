@@ -20,7 +20,6 @@ export async function fetch (req: Request, res: Response) {
   } catch (error:any) {
     const { message } = error
     const { status } = error?.response
-
     res.status(status).json({
       status,
       message

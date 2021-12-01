@@ -4,6 +4,7 @@ import { fetch as twitterFetch } from './controllers/api/v1/twitter'
 import { fetch as youtubeFetch } from './controllers/api/v1/youtube'
 
 import { getTwitterQuerySchema } from './schema/twitter.schema'
+import { getYoutubeQuerySchema } from './schema/youtube.schema'
 import validateResource from './middleware/validateResource'
 
 function routes (app: Express) {
@@ -118,7 +119,7 @@ function routes (app: Express) {
    *         required: true
    *         style: form
    *         allowEmptyValue: false
-   *         example: Fpe1wNTXbJI
+   *         example: wPXtCygVMGw
    *     responses:
    *       200:
    *         description: Oke
@@ -180,7 +181,7 @@ function routes (app: Express) {
    *                   type: string
    *                   example: Request failed with status code 404
    */
-  app.get('/api/v1/youtube', youtubeFetch)
+  app.get('/api/v1/youtube', validateResource(getYoutubeQuerySchema), youtubeFetch)
 }
 
 export default routes
