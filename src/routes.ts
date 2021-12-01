@@ -119,7 +119,7 @@ function routes (app: Express) {
    *         required: true
    *         style: form
    *         allowEmptyValue: false
-   *         example: wPXtCygVMGw
+   *         example: Fpe1wNTXbJI
    *     responses:
    *       200:
    *         description: Oke
