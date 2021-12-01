@@ -1,16 +1,10 @@
-import express, { Request, Response } from 'express'
 import config from 'config'
-import cors from 'cors'
-import corsOptions from './utils/cors'
 import logger from './utils/logger'
-import routes from './routes'
+import runServer from './utils/server'
 import swagerDocs from './utils/swagger'
 
-export const app = express()
+const app = runServer()
 const port = config.get<number>('port')
-
-app.use(cors(corsOptions))
-app.use(express.json())
 
 app.listen(port, () => {
   /**
@@ -18,11 +12,6 @@ app.listen(port, () => {
    * sedang berjalan beserta informasi host & port
    */
   logger.info(`Aplikasi jalan di http://localhost:${port}`)
-
-  /**
-   * Menjalankan rute-rute yang didefinisikan di ./routes.ts
-   */
-  routes(app)
 
   /**
    * Dokumentasi Swagger
