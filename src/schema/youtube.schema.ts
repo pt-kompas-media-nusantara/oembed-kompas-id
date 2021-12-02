@@ -9,7 +9,7 @@
      v: string({
        invalid_type_error: 'Nilai v harus berupa teks',
        required_error: 'Nilai v diperlukan'
-     }).nonempty({ message: 'Nilai v tidak boleh kosong' })
+     }).min(1, 'Nilai v tidak boleh kosong')
    })
  }
  
