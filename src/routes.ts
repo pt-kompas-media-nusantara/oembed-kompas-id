@@ -213,7 +213,7 @@ function routes (app: Express) {
    *         example: true
    *       - in: query
    *         name: maxwidth
-   *         description: Menentukan maxwidth container (max 750)
+   *         description: Menentukan maxwidth container (max 750, min 350)
    *         required: false
    *         allowEmptyValue: true
    *         example: 550
@@ -249,7 +249,7 @@ function routes (app: Express) {
    *                   example: 1.0
    *                 width:
    *                   type: number
-   *                   example: 552
+   *                   example: 550
    *       404:
    *         description: Tautan tak ditemukan
    *         content:
