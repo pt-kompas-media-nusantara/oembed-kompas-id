@@ -6,18 +6,21 @@ export async function fetch (req: Request, res: Response) {
   const {
     url = undefined,
     omitscript = false,
-    useiframe = false
+    useiframe = false,
+    maxwidth = 550
   } = req?.query
   if (!url) { return }
+  const oembedString = (url || '').toString().toLowerCase().includes('videos') ? 'oembed_video' : 'oembed_post'
   try {
     const { data } = await axios.get(
-      'https://graph.facebook.com/oembed_post',
+      `https://graph.facebook.com/${ oembedString }`,
       {
         params: {
           url: url,
           access_token: process.env.ACCESS_TOKEN_FB,
           omitscript,
-          useiframe
+          useiframe,
+          maxwidth
         }
       }
     )

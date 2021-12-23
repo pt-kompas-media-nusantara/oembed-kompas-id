@@ -46,6 +46,12 @@ describe('/api/v1/facebook', () => {
       expect(response.statusCode).toBe(200)
       expect(response.body.html).toContain('<iframe')
     })
+
+    it('maxwidth value is 750, it should return 200 status code and body.html does contain "data-width=`750`" tag', async () => {
+      const response = await request(app).get('/api/v1/facebook?url=https://www.facebook.com/hariankompas/posts/5195973113765088&maxwidth=750')
+      expect(response.statusCode).toBe(200)
+      expect(response.body.html).toContain('data-width=\"750\"')
+    })
   })
 
   describe('given required url and optional omit_script queries are invalid', () => {
@@ -77,6 +83,11 @@ describe('/api/v1/facebook', () => {
 
     it('useiframe value is t, it should return 400 status code', async () => {
       const response = await request(app).get('/api/v1/facebook?url=https://www.facebook.com/hariankompas/posts/5195973113765088&useiframe=t')
+      expect(response.statusCode).toBe(400)
+    })
+
+    it('maxwidth value is t, it should return 400 status code', async () => {
+      const response = await request(app).get('/api/v1/facebook?url=https://www.facebook.com/hariankompas/posts/5195973113765088&maxwidth=t')
       expect(response.statusCode).toBe(400)
     })
   })
