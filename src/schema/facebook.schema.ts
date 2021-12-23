@@ -18,7 +18,9 @@
         /**
         * Chek yang di isikan berupa angka
         */
-        return Number(val) ? Number(val) : 0
+        const n = Number(val)
+        const res = isNaN(n) ? 500 : n
+        return res
       },
       number().int().optional()
     ),

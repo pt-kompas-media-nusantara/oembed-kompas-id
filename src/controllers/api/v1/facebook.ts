@@ -7,7 +7,7 @@ export async function fetch (req: Request, res: Response) {
     url = undefined,
     omitscript = false,
     useiframe = false,
-    maxwidth = 550
+    maxwidth = undefined
   } = req?.query
   if (!url) { return }
   const oembedString = (url || '').toString().toLowerCase().includes('videos') ? 'oembed_video' : 'oembed_post'
