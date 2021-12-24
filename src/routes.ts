@@ -211,6 +211,13 @@ function routes (app: Express) {
    *         required: false
    *         allowEmptyValue: true
    *         example: true
+   *       - in: query
+   *         name: maxwidth
+   *         description: Menentukan maxwidth container (max 750, min 350)
+   *         required: false
+   *         allowEmptyValue: true
+   *         example: 550
+
    *     responses:
    *       200:
    *         description: Oke
@@ -233,7 +240,7 @@ function routes (app: Express) {
    *                   example: https://www.facebook.com/
    *                 html:
    *                   type: string
-   *                   example: <div id="fb-root"></div> <script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&amp;version=v12.0" nonce="bq6MTfzg"></script><div class="fb-post" data-href="https://www.facebook.com/hariankompas/posts/5195973113765088" data-width="552"><blockquote cite="https://graph.facebook.com/197545083607941/posts/5195973113765088/" class="fb-xfbml-parse-ignore"><p>Organisasi Kesehatan Dunia (WHO) 12 November 2021 menyebutkan, setidaknya 30 juta orang dengan diabetes yang membutuhkan insulin masih kesulitan untuk mengaksesnya.</p>Posted by <a href="https://www.facebook.com/197545083607941">Harian Kompas</a> on&nbsp;<a href="https://graph.facebook.com/197545083607941/posts/5195973113765088/">Tuesday, December 7, 2021</a></blockquote></div>
+   *                   example: <div id="fb-root"></div> <script async="1" defer="1" crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&amp;version=v12.0" nonce="bq6MTfzg"></script><div class="fb-post" data-href="https://www.facebook.com/hariankompas/posts/5195973113765088" data-width="550"><blockquote cite="https://graph.facebook.com/197545083607941/posts/5195973113765088/" class="fb-xfbml-parse-ignore"><p>Organisasi Kesehatan Dunia (WHO) 12 November 2021 menyebutkan, setidaknya 30 juta orang dengan diabetes yang membutuhkan insulin masih kesulitan untuk mengaksesnya.</p>Posted by <a href="https://www.facebook.com/197545083607941">Harian Kompas</a> on&nbsp;<a href="https://graph.facebook.com/197545083607941/posts/5195973113765088/">Tuesday, December 7, 2021</a></blockquote></div>
    *                 type:
    *                   type: string
    *                   example: rich
@@ -242,7 +249,7 @@ function routes (app: Express) {
    *                   example: 1.0
    *                 width:
    *                   type: number
-   *                   example: 552
+   *                   example: 550
    *       404:
    *         description: Tautan tak ditemukan
    *         content:
