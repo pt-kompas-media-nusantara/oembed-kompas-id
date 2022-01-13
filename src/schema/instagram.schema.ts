@@ -2,7 +2,7 @@
  * Skema untuk rute /api/v1/instagram
  * Dokumentasi zod di https://github.com/colinhacks/zod
  */
- import { boolean, object, preprocess, string } from 'zod'
+ import { boolean, number, object, preprocess, string } from 'zod'
 
  const query = {
    query: object({
@@ -31,15 +31,17 @@
 			},
 			boolean().nullish().optional(),
 		 ),
-		maxwidth: preprocess(
-			(val:any) => {
-				/**
-				 * Must be between 320 and 658
-				 */
-				return [true, 1].includes(val)
-			},
-			boolean().nullish().optional(),
-		 ),
+		 maxwidth: preprocess(
+      (val:any) => {
+        /**
+        * Chek yang di isikan berupa angka
+        */
+        const n = Number(val)
+        const res = isNaN(n) ? 500 : n
+        return res
+      },
+      number().int().optional()
+    ),
    })
  }
  
