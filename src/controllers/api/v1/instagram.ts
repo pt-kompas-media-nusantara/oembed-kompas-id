@@ -7,7 +7,7 @@ export async function fetch (req: Request, res: Response) {
     url = undefined,
     omitscript = false,
     hidecaption = false,
-		maxwidth= false,
+		maxwidth = undefined
   } = req?.query
   if (!url) { return }
   try {
